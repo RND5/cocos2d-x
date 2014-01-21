@@ -220,6 +220,13 @@ public:
     virtual void updateProjection(void) = 0;
 };
 
+// Custom Delegate protocol
+class CC_DLL CCDirectorRASDelegate
+{
+public:
+    virtual void screenSizeChanged(float width, float height) = 0;
+};
+
 NS_CC_END
 
 #endif // __CCPROTOCOLS_H__
