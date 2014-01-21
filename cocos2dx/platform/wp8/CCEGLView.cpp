@@ -448,11 +448,11 @@ void CCEGLView::UpdateWindowSize()
     {
         m_obScreenSize = CCSizeMake(width, height);
         CCSize designSize = getDesignResolutionSize();
-        CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);
+        CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionExactFit);
         CCDirector::sharedDirector()->setProjection(CCDirector::sharedDirector()->getProjection());
 
 		// custom
-	CCDirector::sharedDirector()->screenSizeChanged(CCEGLView::sharedOpenGLView()->getFrameSize().width, CCEGLView::sharedOpenGLView()->getFrameSize().height);
+		CCDirector::sharedDirector()->screenSizeChanged(CCEGLView::sharedOpenGLView()->getFrameSize().width, CCEGLView::sharedOpenGLView()->getFrameSize().height);
    }
 }
 
