@@ -268,6 +268,7 @@ static EAGLView *view = 0;
     // Avoid flicker. Issue #350
     //[director performSelectorOnMainThread:@selector(drawScene) withObject:nil waitUntilDone:YES];
     cocos2d::CCDirector::sharedDirector()->drawScene();
+    cocos2d::CCDirector::sharedDirector()->screenSizeChanged(size.width, size.height);
 }
 
 - (void) swapBuffers
