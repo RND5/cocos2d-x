@@ -121,6 +121,9 @@ bool CCDirector::init(void)
     // projection delegate if "Custom" projection is used
     m_pProjectionDelegate = NULL;
 
+    // Custom
+    m_pRASDelegate = NULL;
+
     // FPS
     m_fAccumDt = 0.0f;
     m_fFrameRate = 0.0f;
@@ -951,6 +954,14 @@ void CCDirector::setContentScaleFactor(float scaleFactor)
     }
 }
 
+// custom
+void CCDirector::screenSizeChanged(float width, float height)
+{
+    if (m_pRASDelegate != NULL) {
+        m_pRASDelegate->screenSizeChanged(width, height);
+    }
+}
+
 CCNode* CCDirector::getNotificationNode() 
 { 
     return m_pNotificationNode; 
@@ -971,6 +982,17 @@ CCDirectorDelegate* CCDirector::getDelegate() const
 void CCDirector::setDelegate(CCDirectorDelegate* pDelegate)
 {
     m_pProjectionDelegate = pDelegate;
+}
+
+// custom
+CCDirectorRASDelegate* CCDirector::getRASDelegate() const
+{
+    return m_pRASDelegate;
+}
+
+void CCDirector::setRASDelegate(CCDirectorRASDelegate* pDelegate)
+{
+    m_pRASDelegate = pDelegate;
 }
 
 void CCDirector::setScheduler(CCScheduler* pScheduler)

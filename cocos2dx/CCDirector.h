@@ -74,6 +74,8 @@ class CCTouchDispatcher;
 class CCKeypadDispatcher;
 class CCAccelerometer;
 
+class CCDirectorRASDelegate;
+
 /**
 @brief Class that creates and handle the main Window and manages how
 and when to execute the Scenes.
@@ -184,6 +186,10 @@ public:
      */
     CCDirectorDelegate* getDelegate() const;
     void setDelegate(CCDirectorDelegate* pDelegate);
+
+    // custom
+    CCDirectorRASDelegate* getRASDelegate() const;
+    void setRASDelegate(CCDirectorRASDelegate* pDelegate);
 
     // window size
 
@@ -325,6 +331,9 @@ public:
     void setContentScaleFactor(float scaleFactor);
     float getContentScaleFactor(void);
 
+    // custom
+    void screenSizeChanged(float width, float height);
+
 public:
     /** CCScheduler associated with this director
      @since v2.0
@@ -438,6 +447,9 @@ protected:
 
     /* Projection protocol delegate */
     CCDirectorDelegate *m_pProjectionDelegate;
+    
+    //
+    CCDirectorRASDelegate* m_pRASDelegate;
     
     // CCEGLViewProtocol will recreate stats labels to fit visible rect
     friend class CCEGLViewProtocol;

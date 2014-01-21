@@ -450,6 +450,9 @@ void CCEGLView::UpdateWindowSize()
         CCSize designSize = getDesignResolutionSize();
         CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);
         CCDirector::sharedDirector()->setProjection(CCDirector::sharedDirector()->getProjection());
+
+		// custom
+	CCDirector::sharedDirector()->screenSizeChanged(CCEGLView::sharedOpenGLView()->getFrameSize().width, CCEGLView::sharedOpenGLView()->getFrameSize().height);
    }
 }
 
