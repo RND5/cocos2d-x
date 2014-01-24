@@ -37,7 +37,7 @@ namespace gui {
 /**
  *  @lua NA
  */
-class TouchGroup : public CCLayer
+class TouchGroup : public CCLayerColor
 {
     
 public:

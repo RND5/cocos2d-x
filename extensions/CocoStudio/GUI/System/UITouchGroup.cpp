@@ -43,7 +43,7 @@ TouchGroup::~TouchGroup()
 
 bool TouchGroup::init()
 {
-    if (CCLayer::init())
+    if (CCLayerColor::init())
     {
         m_pSelectedWidgets = CCArray::create();
         m_pSelectedWidgets->retain();

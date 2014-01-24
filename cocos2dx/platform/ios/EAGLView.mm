@@ -265,10 +265,13 @@ static EAGLView *view = 0;
     size.height = size_.height;
     //cocos2d::CCDirector::sharedDirector()->reshapeProjection(size);
 
+    // custom
+    cocos2d::CCEGLView::sharedOpenGLView()->setFrameSize(size.width, size.height);
+    cocos2d::CCDirector::sharedDirector()->screenSizeChanged(size.width, size.height);
+    
     // Avoid flicker. Issue #350
     //[director performSelectorOnMainThread:@selector(drawScene) withObject:nil waitUntilDone:YES];
     cocos2d::CCDirector::sharedDirector()->drawScene();
-    cocos2d::CCDirector::sharedDirector()->screenSizeChanged(size.width, size.height);
 }
 
 - (void) swapBuffers
