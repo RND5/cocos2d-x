@@ -66,6 +66,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)WP8\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IncludePath>C:\jsoncpp-src-0.5.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\jsoncpp-src-0.5.0\build\vs71\debug\lib_json;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -83,7 +85,7 @@
       <DisableSpecificWarnings>4267;4251;4244;4453;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;json_vc71_libmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
@@ -201,11 +203,13 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="DeviceInfomation.h" />
     <ClInclude Include="input_Infomation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="DeviceInfomation.cpp" />
     <ClCompile Include="input_Infomation.cpp" />
   </ItemGroup>
   <ItemGroup>

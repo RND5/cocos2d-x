@@ -43,6 +43,9 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="DeviceInfomation.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="input_Infomation.h" />
@@ -53,6 +56,9 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceInfomation.h">
       <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
