@@ -75,8 +75,13 @@ void WP8Keyboard::SetFocus(bool hasFocus)
 	{
 		m_inputBuffer->InputScope = CoreInputScope::Default;
 		m_parentWindow->IsKeyboardInputEnabled = true;
-		m_keydownToken = m_parentWindow->KeyDown += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &WP8Keyboard::OnKeyDown);	
-		m_characterReceivedToken = m_parentWindow->CharacterReceived += ref new TypedEventHandler<CoreWindow^, CharacterReceivedEventArgs^>(this, &WP8Keyboard::OnCharacterReceived); 
+
+        //static bool event_once = true;
+        //if (event_once) {
+        //    event_once = false;
+		    m_keydownToken = m_parentWindow->KeyDown += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &WP8Keyboard::OnKeyDown);
+    		m_characterReceivedToken = m_parentWindow->CharacterReceived += ref new TypedEventHandler<CoreWindow^, CharacterReceivedEventArgs^>(this, &WP8Keyboard::OnCharacterReceived); 
+        //}
 	}
 	else
 	{

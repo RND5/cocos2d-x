@@ -203,12 +203,14 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="DeviceInfoIO.h" />
     <ClInclude Include="DeviceInfomation.h" />
     <ClInclude Include="input_Infomation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="DeviceInfoIO.cpp" />
     <ClCompile Include="DeviceInfomation.cpp" />
     <ClCompile Include="input_Infomation.cpp" />
   </ItemGroup>
