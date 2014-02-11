@@ -2,9 +2,7 @@
 #include "DeviceInfomation.h"
 
 class DeviceInfoIO {
-public:
-    
+public:    
     void readJsonFile(std::vector<DeviceInfomation>& deviceInfoList);
-
     bool writeJsonFile(std::vector<DeviceInfomation>& deviceInfoList);
 };

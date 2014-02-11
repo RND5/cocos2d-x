@@ -1,19 +1,4 @@
 #include "HelloWorldScene.h"
-//#include <iostream>
-#include <fstream>
-
-
-//
-// rapidjson 사용.
-//
-#include "CocoStudio\Json\rapidjson\document.h"
-#include "CocoStudio\Json\rapidjson\writer.h"
-#include "CocoStudio\Json\rapidjson\prettywriter.h"
-#include "CocoStudio\Json\rapidjson\filestream.h"
-#include "CocoStudio\Json\rapidjson\stringbuffer.h"
-#include "CocoStudio\Json\rapidjson\rapidjson.h"
-
-//#include "DeviceInfomation.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -51,9 +36,6 @@ bool HelloWorld::init()
 
 
 
-
-
-	
 
 	////////////////////////////////////////////////////////////////////////////////////
 	/////
@@ -106,8 +88,7 @@ bool HelloWorld::init()
 
 void HelloWorld::touchTextField(CCObject* pSender, TextFiledEventType type)		// textfield 클릭했을 때 이전 값 지우기.
 {
-	if(type == TEXTFIELD_EVENT_ATTACH_WITH_IME)
-	{
+	if(type == TEXTFIELD_EVENT_ATTACH_WITH_IME)	{
         TextField* ptr = dynamic_cast<TextField*>(pSender);
         const char* str = ptr->getStringValue();
         ptr->setText("");
@@ -116,7 +97,6 @@ void HelloWorld::touchTextField(CCObject* pSender, TextFiledEventType type)		// 
     else if (type == TEXTFIELD_EVENT_DETACH_WITH_IME) {
 
     }
-
 }
 
 
@@ -124,7 +104,6 @@ void HelloWorld::touchInputBtn(CCObject* pSender, TouchEventType type)
 {
 	if(type == TOUCH_EVENT_BEGAN)
 	{
-
 		//
 		// deviceInfoList vector에 객체 추가 저장.
 		//
@@ -136,17 +115,15 @@ void HelloWorld::touchInputBtn(CCObject* pSender, TouchEventType type)
             pListView->removeAllItems();
 
             for(int i = 0; i < deviceInfoList.size(); i++) {
-
 		        pDevice_name->setText(deviceInfoList[i].getDeviceName());
 		        pIpAddress->setText(deviceInfoList[i].getIpAddress());
         
                 pListView->pushBackDefaultItem();
             }
         }
-                
+
         DeviceInfoIO deviceInfoIO;
         deviceInfoIO.writeJsonFile(deviceInfoList);
-
 	}
 }
 

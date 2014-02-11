@@ -33,22 +33,14 @@ public:
 //	FILE *fp;
 	
 	std::vector<DeviceInfomation> deviceInfoList;
-
-
-
+    
 	void addListView();
-
-
+    
 	void touchInputBtn(CCObject* pSender, TouchEventType type);		// Input button 클릭했을 때 일어나는 이벤트 함수
-
-	
+    	
 	void touchTextField(CCObject* pSender, TextFiledEventType type);		// textfield 클릭했을 때 이전 값 지우기
 
-
-
-
-
-
+    
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();  
 
