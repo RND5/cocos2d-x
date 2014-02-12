@@ -31,15 +31,31 @@ public:
     Label* pLabel_num;
 
     Layout* pLayout_listSelectedItem;       // listview에 있는 item이 선택되었을 때 불리어짐.
-    Button* pBtn_whatch;
-    Button* pBtn_search;
-    Button* pBtn_changeSet;
-    Button* pBtn_back;
+    //Button* pBtn_whatch;
+    //Button* pBtn_search;
+    //Button* pBtn_changeSet;
+    //Button* pBtn_back;
     
     Button* pBtn_addDevice;
     Button* pBtn_delDevice;
         
+    
+    //
+    Widget* newItem;
+
     Layout* firstLayout;
+    Layout* secontLayout;
+
+    Label* name;
+    Label* ip;
+    Label* num;
+
+    Button* back;
+
+    Layout* selectLayout;
+
+    // listview 에 있는 요소가 클릭된 상태인가를 나타내주는 멤버 변수
+    bool isClicked;
 
     DeviceInfoIO deviceInfoIO;              // json file에 있는 deviceinformation 정보를 저장하고 가져옴.
 //    std::vector<DeviceInformation> vecDeviceList;
@@ -52,7 +68,7 @@ public:
 
     void touchListviewItem(CCObject* pSender, TouchEventType type);
 
-
+    void touchBackButton(CCObject* pSender, TouchEventType type);
 
 
 

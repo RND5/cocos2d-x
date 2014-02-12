@@ -1,5 +1,8 @@
 #include "DeviceRegisterPage.h"
 #include "HelloWorldScene.h"
+//#include <Const.h>
+//#include <REDCore.h>
+//#include <Watcher.h>
 
 CCScene* DeviceRegisterPage::scene()
 {
@@ -8,7 +11,8 @@ CCScene* DeviceRegisterPage::scene()
     DeviceRegisterPage* layer = DeviceRegisterPage::create();
 
     scene->addChild(layer);
-    
+    //REDCore::getREDCore();
+    //new Watcher();
     return scene;
 }
 
