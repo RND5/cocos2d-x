@@ -27,6 +27,10 @@ bool DeviceRegisterPage::init()
 
     pWidget =  GUIReader::shareReader()->widgetFromJsonFile("DeviceInputPage_1.json");
     pLayer->addWidget(pWidget);
+        
+    // 위젯 사이즈를 핸드폰 해상도와 같게 설정
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+    pWidget->setSize(ccp(visibleSize.width, visibleSize.height));
 
     getUI();
 

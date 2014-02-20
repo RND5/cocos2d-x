@@ -42,13 +42,17 @@ bool HelloWorld::init()
     cocos2d::gui::Widget* pWidget = GUIReader::shareReader()->widgetFromJsonFile("test01_1.json");
     this->addWidget(pWidget);
     pWidget->setSize(ccp(visibleSize.width - 50, visibleSize.height-50)); // 현재의
-    
+
+ //   CCSize aa = CCEGLView::sharedOpenGLView()->getDesignResolutionSize();
+
     return true;
 }
 
 
 void HelloWorld::screenSizeChanged(float width, float height)
 {
+    CCSize aa = CCEGLView::sharedOpenGLView()->getDesignResolutionSize();
+
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(width, height, kResolutionShowAll);
 
     CCScene* runScene = CCDirector::sharedDirector()->getRunningScene();
@@ -65,7 +69,6 @@ void HelloWorld::screenSizeChanged(float width, float height)
         
         widgetBasePanel -> setSize(CCSize(pWidget->getSize().width - 20, 100));
         widgetBasePanel -> setPosition(ccp(10, pWidget->getSize().height - widgetBasePanel->getSize().height - 10));
-
         
         cocos2d::gui::Widget* widget1 = (cocos2d::gui::Widget*)layer->TouchGroup::getWidgetByTag(31);
         cocos2d::gui::Widget* widget2 = (cocos2d::gui::Widget*)layer->TouchGroup::getWidgetByTag(32);

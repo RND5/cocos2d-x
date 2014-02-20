@@ -1,4 +1,4 @@
-#include "HelloWorldScene.h"
+ï»¿#include "HelloWorldScene.h"
 //#include <Const.h>
 //#include <Watcher.h>
 //#include <REDCore.h>
@@ -41,46 +41,50 @@ bool HelloWorld::init()
 
     ////////////////////////////////////////////////////////////////////////////////////
     /////
-    /////	°³¹ßÀÚ ÄÚµå.
+    /////	ê°œë°œì ì½”ë“œ.
     /////
     ////////////////////////////////////////////////////////////////////////////////////
 
-    // listview¿¡ ÀÖ´Â ¿ä¼Ò°¡ ¼±ÅÃµÈ »óÅÂÀÎÁö ¾Ë·ÁÁÜ. ÇöÀç ¼±ÅÃ ¾ÈµÇ¾ú±â ¶§¹®¿¡ false
+    
+   // CCDirector::sharedDirector()->setRASDelegate(this);
+
+
+    // listviewì— ìˆëŠ” ìš”ì†Œê°€ ì„ íƒëœ ìƒíƒœì¸ì§€ ì•Œë ¤ì¤Œ. í˜„ì¬ ì„ íƒ ì•ˆë˜ì—ˆê¸° ë•Œë¬¸ì— false
     isClicked = false;
 
-    getUI();                                                                        // json¿¡ ÀÖ´Â gui¸¦ °¡Á®¿È.
+    getUI();                                                                        // jsonì— ìˆëŠ” guië¥¼ ê°€ì ¸ì˜´.
 
-    pListview_devices->setItemModel(pLayout_listAddItem);                           // listview¿¡ µé¾î°¥ ¾ÆÀÌÅÛ pLayout_listAddItemÀ¸·Î ¼³Á¤.
+    pListview_devices->setItemModel(pLayout_listAddItem);                           // listviewì— ë“¤ì–´ê°ˆ ì•„ì´í…œ pLayout_listAddItemìœ¼ë¡œ ì„¤ì •.
 
     //    std::vector<DeviceInformation> vecDeviceList;
 
-    // device µî·Ï ÆäÀÌÁö¿¡¼­ Ã¹ ÆäÀÌÁö·Î ´Ù½Ã ³Ñ¾î¿Ã ¶§, vector¸¦ ÃÊ±âÈ­ ÇØÁØ´Ù.
+    // device ë“±ë¡ í˜ì´ì§€ì—ì„œ ì²« í˜ì´ì§€ë¡œ ë‹¤ì‹œ ë„˜ì–´ì˜¬ ë•Œ, vectorë¥¼ ì´ˆê¸°í™” í•´ì¤€ë‹¤.
     vecDeviceList.clear();
-    // json ÆÄÀÏ¿¡ ÀÖ´Â device Á¤º¸¸¦ ÀĞ°í vector¿¡ ³Ö´Â´Ù.
+    // json íŒŒì¼ì— ìˆëŠ” device ì •ë³´ë¥¼ ì½ê³  vectorì— ë„£ëŠ”ë‹¤.
     deviceInfoIO.readJsonFile(vecDeviceList);           
 
-    // listview¿¡ ¸î °³°¡ µé¾î°¡´ÂÁö ¼¼±â À§ÇÑ Ä«¿îÅÍ
+    // listviewì— ëª‡ ê°œê°€ ë“¤ì–´ê°€ëŠ”ì§€ ì„¸ê¸° ìœ„í•œ ì¹´ìš´í„°
     listview_count = 0;
 
-    // vector Á¤º¸¸¦ listview¿¡ ÀúÀå.
+    // vector ì •ë³´ë¥¼ listviewì— ì €ì¥.
     for(std::vector<DeviceInformation>::iterator iter = vecDeviceList.begin(); iter < vecDeviceList.end(); iter++) {
-        // listview¿¡ ¸î °³°¡ µé¾î°¡´ÂÁö ¼¼±â À§ÇÑ Ä«¿îÅÍ
+        // listviewì— ëª‡ ê°œê°€ ë“¤ì–´ê°€ëŠ”ì§€ ì„¸ê¸° ìœ„í•œ ì¹´ìš´í„°
         listview_count++;
         
-        // vector¿¡ ÀúÀåµÈ device Á¤º¸¸¦ listview¿¡ ³ÖÀ» ¿ä¼Òµé¿¡ ÀúÀå        
+        // vectorì— ì €ì¥ëœ device ì •ë³´ë¥¼ listviewì— ë„£ì„ ìš”ì†Œë“¤ì— ì €ì¥        
         pLabel_name->setText(iter->getDeviceName());
         pLabel_ip->setText(iter->getIp());
                 
-        // int¿¡¼­ stringÀ¸·Î º¯È¯ÇÏ¿© listview label¿¡ ¸î ¹øÂ°ÀÎÁö numÀ» ´ëÀÔ. 
+        // intì—ì„œ stringìœ¼ë¡œ ë³€í™˜í•˜ì—¬ listview labelì— ëª‡ ë²ˆì§¸ì¸ì§€ numì„ ëŒ€ì…. 
         std::ostringstream ostr;
         ostr.str("");
         ostr << listview_count;
         pLabel_num->setText(ostr.str().c_str());
 
-        // listview¿¡ device Á¤º¸ Ãß°¡
+        // listviewì— device ì •ë³´ ì¶”ê°€
         pListview_devices->pushBackDefaultItem();
 
-        // listview¿¡ ÀúÀåµÇ´Â ¾ÆÀÌÅÛ¿¡ ÀÌº¥Æ® ºÙÀÓ.
+        // listviewì— ì €ì¥ë˜ëŠ” ì•„ì´í…œì— ì´ë²¤íŠ¸ ë¶™ì„.
         newItem = pListview_devices->getItem(listview_count - 1);
         firstLayout = dynamic_cast<Layout*>(newItem->getChildByTag(12));
         secontLayout = dynamic_cast<Layout*>(newItem->getChildByTag(16));
@@ -99,10 +103,10 @@ bool HelloWorld::init()
     }
 
 
-    /*                      ÇÑ±Û ±úÁö´Â Çö»ó ¹æÁö
+    /*                      í•œê¸€ ê¹¨ì§€ëŠ” í˜„ìƒ ë°©ì§€
     char msg[128];
 
-    WideCharToMultiByte(CP_UTF8, 0, L"ÀÌÁ¨±¦Âú¾Æ", -1, msg, 128, NULL, NULL);
+    WideCharToMultiByte(CP_UTF8, 0, L"ì´ì  ê´œì°®ì•„", -1, msg, 128, NULL, NULL);
 
     CCLog("%s", msg);
     */
@@ -131,6 +135,11 @@ void HelloWorld::getUI()
 
     pWidget = GUIReader::shareReader()->widgetFromJsonFile("DeviceListPage_1.json");
     uLayer->addWidget(pWidget);
+    
+    // ìœ„ì ¯ ì‚¬ì´ì¦ˆë¥¼ í•¸ë“œí° í•´ìƒë„ì™€ ê°™ê²Œ ì„¤ì •
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+    pWidget->setSize(ccp(visibleSize.width, visibleSize.height));
+
 
     pBtn_setting = dynamic_cast<Button*>(pWidget->getChildByTag(2)->getChildByTag(3));                      // setting button
 
@@ -152,6 +161,14 @@ void HelloWorld::getUI()
     pBtn_addDevice = dynamic_cast<Button*>(pWidget->getChildByTag(8)->getChildByTag(9));                    // device information add button
     pBtn_delDevice = dynamic_cast<Button*>(pWidget->getChildByTag(8)->getChildByTag(10));                   // device information delete button
 
+    
+//    char strUTF8[ 1024 ];
+//WideCharToMultiByte( CP_UTF8, 0, L"ì¶”ê°€cns", -1, strUTF8, 1024, NULL, NULL );
+//pBtn_addDevice->setTitleText(strUTF8);
+
+    //pBtn_addDevice->setTitleFontName("NanumGothic.ttf");
+
+
     pBtn_addDevice->addTouchEventListener(this, toucheventselector(HelloWorld::selectBtnAddDevice));        // attach event listener at add button
 
     //pLayout_listFirstItem->addTouchEventListener(this, toucheventselector(HelloWorld::touchListviewItem));
@@ -162,18 +179,28 @@ void HelloWorld::getUI()
 
 void HelloWorld::touchListviewItem(CCObject* pSender, TouchEventType type)
 {
-    if(type == TOUCH_EVENT_BEGAN) {
-        CCLog("Å¬¸¯µÆÀ½\n");
 
+    if(type == TOUCH_EVENT_BEGAN) {
         if(isClicked == true) {
             selectLayout->runAction(CCMoveBy::create(1, ccp(-480,0)));
         }
                 
         selectLayout = dynamic_cast<Layout*>(pSender);
+        CCLog("1. pSender : %p", pSender);
+        CCLog("2. selectLayout : %p", selectLayout);
 
-        // ÇöÀç À§Ä¡¿¡¼­ 1ÃÊ µ¿¾È ¿À¸¥ÂÊÀ¸·Î 480 ¸¸Å­ ÀÌµ¿.
-        CCActionInterval* actRight = CCMoveBy::create(1, ccp(480,0));
-        selectLayout->runAction(actRight);
+        if(selectLayout != NULL) { 
+            // í˜„ì¬ ìœ„ì¹˜ì—ì„œ 1ì´ˆ ë™ì•ˆ ì˜¤ë¥¸ìª½ìœ¼ë¡œ 480 ë§Œí¼ ì´ë™.
+            CCActionInterval* actRight = CCMoveBy::create(1, ccp(480,0));
+
+            CCLog("6. selectLayout : %p", selectLayout);
+            selectLayout->runAction(actRight);
+            
+            isClicked = true;
+        }
+        else {
+            isClicked = false;
+        }
 
         //Widget* newItem = pListview_devices->getItem(listview_count - 2);
         //Layout* secondItem = dynamic_cast<Layout*>(newItem->getChildByTag(16));
@@ -183,7 +210,6 @@ void HelloWorld::touchListviewItem(CCObject* pSender, TouchEventType type)
         //Button* ip = dynamic_cast<Button*>(newItem->getChildByTag(16)->getChildByTag(18));
         //Button* num = dynamic_cast<Button*>(newItem->getChildByTag(16)->getChildByTag(19));
 
-        isClicked = true;
     }
 }
 
@@ -193,7 +219,7 @@ void HelloWorld::touchBackButton(CCObject* pSender, TouchEventType type)
 
         //selectLayout = dynamic_cast<Button*>(pSender);
 
-        // ÇöÀç À§Ä¡¿¡¼­ 1ÃÊ µ¿¾È ¿ŞÂÊÀ¸·Î 480 ¸¸Å­ ÀÌµ¿.
+        // í˜„ì¬ ìœ„ì¹˜ì—ì„œ 1ì´ˆ ë™ì•ˆ ì™¼ìª½ìœ¼ë¡œ 480 ë§Œí¼ ì´ë™.
         CCActionInterval* actLeft = CCMoveBy::create(1, ccp(-480,0));
         selectLayout->runAction(actLeft);
 

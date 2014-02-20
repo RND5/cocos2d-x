@@ -108,6 +108,9 @@ void ListAndInputPage::OnActivated(CoreApplicationView^ applicationView, IActiva
 void ListAndInputPage::OnBackButtonPressed(Object^ sender, BackPressedEventArgs^ args)
 {
     // Leave args->Handled set to false and the app will quit when user presses the back button on the phone
+
+    // 윈도우폰 뒤로가기 버튼이 클릭됐을 때, 이벤트 발생
+    CCLog("\nback button clicked\n");
 }
 
 void ListAndInputPage::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
