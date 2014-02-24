@@ -47,23 +47,23 @@
               "rotation": 0,
               "scaleX": 1,
               "scaleY": 1,
-              "sizePercentX": 0.3125,
+              "sizePercentX": 0.625,
               "sizePercentY": 0.6,
               "sizeType": 1,
               "tag": 3,
               "touchAble": false,
               "useMergedTexture": false,
               "visible": true,
-              "width": 150,
+              "width": 300,
               "x": 240,
               "y": 25,
               "areaHeight": 30.0000019,
-              "areaWidth": 150,
+              "areaWidth": 300,
               "fontFile": null,
               "fontName": "微软雅黑",
               "fontSize": 25,
               "hAlignment": 1,
-              "text": "신규 등록",
+              "text": "NEW DEVICE",
               "touchScaleEnable": false,
               "vAlignment": 1
             }
@@ -157,7 +157,7 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.14791666,
                   "positionPercentY": 0.49999997,
                   "positionType": 1,
                   "rotation": 0,
@@ -171,7 +171,7 @@
                   "useMergedTexture": false,
                   "visible": true,
                   "width": 92,
-                  "x": 50,
+                  "x": 71,
                   "y": 15,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -179,7 +179,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 17,
                   "hAlignment": 1,
-                  "text": "일반",
+                  "text": "DEVICE NAME",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -291,7 +291,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 18,
                   "hAlignment": 1,
-                  "text": "이름",
+                  "text": "NAME",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -341,7 +341,7 @@
                   "maxLengthEnable": false,
                   "passwordEnable": false,
                   "passwordStyleText": "*",
-                  "placeHolder": "(예) 원격지 DVR",
+                  "placeHolder": "EXAMPLE) DVR",
                   "text": ""
                 }
               }
@@ -493,21 +493,21 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.229166672,
                   "positionPercentY": 0.5,
                   "positionType": 1,
                   "rotation": 0,
                   "scaleX": 1,
                   "scaleY": 1,
-                  "sizePercentX": 0.191666663,
+                  "sizePercentX": 0.40625,
                   "sizePercentY": 0.6666667,
                   "sizeType": 1,
                   "tag": 12,
                   "touchAble": false,
                   "useMergedTexture": false,
                   "visible": true,
-                  "width": 92,
-                  "x": 50,
+                  "width": 195,
+                  "x": 110,
                   "y": 15,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -515,7 +515,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 17,
                   "hAlignment": 1,
-                  "text": "연결정보",
+                  "text": "CONNECT INFORMATION",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -605,7 +605,7 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.129166663,
                   "positionPercentY": 0.785714269,
                   "positionType": 1,
                   "rotation": 0,
@@ -619,7 +619,7 @@
                   "useMergedTexture": false,
                   "visible": true,
                   "width": 92,
-                  "x": 50,
+                  "x": 62,
                   "y": 55,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -627,7 +627,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 18,
                   "hAlignment": 1,
-                  "text": "주소",
+                  "text": "ADDRESS",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -677,7 +677,7 @@
                   "maxLengthEnable": false,
                   "passwordEnable": false,
                   "passwordStyleText": "*",
-                  "placeHolder": "IP 주소",
+                  "placeHolder": "IP ADDRESS",
                   "text": ""
                 }
               }
@@ -766,7 +766,7 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.13333334,
                   "positionPercentY": 0.785714269,
                   "positionType": 1,
                   "rotation": 0,
@@ -780,7 +780,7 @@
                   "useMergedTexture": false,
                   "visible": true,
                   "width": 92,
-                  "x": 50,
+                  "x": 64,
                   "y": 55,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -788,7 +788,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 18,
                   "hAlignment": 1,
-                  "text": "FEN 사용",
+                  "text": "USING FEN",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -949,7 +949,7 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.09583333,
                   "positionPercentY": 0.785714269,
                   "positionType": 1,
                   "rotation": 0,
@@ -963,7 +963,7 @@
                   "useMergedTexture": false,
                   "visible": true,
                   "width": 92,
-                  "x": 50,
+                  "x": 46,
                   "y": 55,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -971,7 +971,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 18,
                   "hAlignment": 1,
-                  "text": "감시 포트",
+                  "text": "PORT",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -1195,7 +1195,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 17,
                   "hAlignment": 1,
-                  "text": "계정",
+                  "text": "LOGIN",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -1285,7 +1285,7 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.110416666,
                   "positionPercentY": 0.785714269,
                   "positionType": 1,
                   "rotation": 0,
@@ -1299,7 +1299,7 @@
                   "useMergedTexture": false,
                   "visible": true,
                   "width": 92,
-                  "x": 50,
+                  "x": 53,
                   "y": 55,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -1307,7 +1307,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 18,
                   "hAlignment": 1,
-                  "text": "사용자 ID",
+                  "text": "USER ID",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -1357,7 +1357,7 @@
                   "maxLengthEnable": false,
                   "passwordEnable": false,
                   "passwordStyleText": "*",
-                  "placeHolder": "사용자 ID",
+                  "placeHolder": "USER ID",
                   "text": ""
                 }
               }
@@ -1446,7 +1446,7 @@
                   "ignoreSize": true,
                   "layoutParameter": null,
                   "opacity": 255,
-                  "positionPercentX": 0.104166664,
+                  "positionPercentX": 0.1375,
                   "positionPercentY": 0.785714269,
                   "positionType": 1,
                   "rotation": 0,
@@ -1460,7 +1460,7 @@
                   "useMergedTexture": false,
                   "visible": true,
                   "width": 92,
-                  "x": 50,
+                  "x": 66,
                   "y": 55,
                   "areaHeight": 0,
                   "areaWidth": 0,
@@ -1468,7 +1468,7 @@
                   "fontName": "微软雅黑",
                   "fontSize": 18,
                   "hAlignment": 1,
-                  "text": "비밀번호",
+                  "text": "PASSWORD",
                   "touchScaleEnable": false,
                   "vAlignment": 1
                 }
@@ -1516,9 +1516,9 @@
                   "fontSize": 20,
                   "maxLength": 6,
                   "maxLengthEnable": false,
-                  "passwordEnable": false,
+                  "passwordEnable": true,
                   "passwordStyleText": "*",
-                  "placeHolder": "비밀번호",
+                  "placeHolder": "PASSWORD",
                   "text": ""
                 }
               }
@@ -1662,8 +1662,8 @@
               "colorR": 255,
               "flipX": false,
               "flipY": false,
-              "height": 50,
-              "ignoreSize": false,
+              "height": 40,
+              "ignoreSize": true,
               "layoutParameter": null,
               "opacity": 255,
               "positionPercentX": 0.25,
@@ -1679,7 +1679,7 @@
               "touchAble": true,
               "useMergedTexture": false,
               "visible": true,
-              "width": 160,
+              "width": 103,
               "x": 120,
               "y": 35,
               "capInsetsHeight": 0,
@@ -1693,7 +1693,7 @@
                 "resourceType": 0
               },
               "fontName": "微软雅黑",
-              "fontSize": 18,
+              "fontSize": 20,
               "fontType": 0,
               "normal": null,
               "normalData": {
@@ -1708,9 +1708,9 @@
                 "resourceType": 0
               },
               "scale9Enable": false,
-              "scale9Height": 50,
-              "scale9Width": 160,
-              "text": "저장",
+              "scale9Height": 40,
+              "scale9Width": 103,
+              "text": "SAVE",
               "textColorB": 255,
               "textColorG": 255,
               "textColorR": 255
@@ -1734,8 +1734,8 @@
               "colorR": 255,
               "flipX": false,
               "flipY": false,
-              "height": 50,
-              "ignoreSize": false,
+              "height": 40,
+              "ignoreSize": true,
               "layoutParameter": null,
               "opacity": 255,
               "positionPercentX": 0.75,
@@ -1751,7 +1751,7 @@
               "touchAble": true,
               "useMergedTexture": false,
               "visible": true,
-              "width": 160,
+              "width": 103,
               "x": 360,
               "y": 35,
               "capInsetsHeight": 0,
@@ -1765,7 +1765,7 @@
                 "resourceType": 0
               },
               "fontName": "微软雅黑",
-              "fontSize": 18,
+              "fontSize": 20,
               "fontType": 0,
               "normal": null,
               "normalData": {
@@ -1780,9 +1780,9 @@
                 "resourceType": 0
               },
               "scale9Enable": false,
-              "scale9Height": 50,
-              "scale9Width": 160,
-              "text": "취소",
+              "scale9Height": 40,
+              "scale9Width": 103,
+              "text": "CANCEL",
               "textColorB": 255,
               "textColorG": 255,
               "textColorR": 255

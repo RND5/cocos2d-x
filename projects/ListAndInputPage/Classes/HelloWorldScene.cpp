@@ -161,6 +161,11 @@ void HelloWorld::getUI()
     pBtn_addDevice = dynamic_cast<Button*>(pWidget->getChildByTag(8)->getChildByTag(9));                    // device information add button
     pBtn_delDevice = dynamic_cast<Button*>(pWidget->getChildByTag(8)->getChildByTag(10));                   // device information delete button
 
+    //pBtn_addDevice->setSize(ccp(160, 50));
+    pBtn_delDevice->setScaleX(2);
+    pBtn_delDevice->setScaleY(2);
+
+
     
 //    char strUTF8[ 1024 ];
 //WideCharToMultiByte( CP_UTF8, 0, L"추가cns", -1, strUTF8, 1024, NULL, NULL );
@@ -182,7 +187,7 @@ void HelloWorld::touchListviewItem(CCObject* pSender, TouchEventType type)
 
     if(type == TOUCH_EVENT_BEGAN) {
         if(isClicked == true) {
-            selectLayout->runAction(CCMoveBy::create(1, ccp(-480,0)));
+            selectLayout->runAction(CCMoveBy::create(1, ccp(-768,0)));
         }
                 
         selectLayout = dynamic_cast<Layout*>(pSender);
@@ -190,8 +195,8 @@ void HelloWorld::touchListviewItem(CCObject* pSender, TouchEventType type)
         CCLog("2. selectLayout : %p", selectLayout);
 
         if(selectLayout != NULL) { 
-            // 현재 위치에서 1초 동안 오른쪽으로 480 만큼 이동.
-            CCActionInterval* actRight = CCMoveBy::create(1, ccp(480,0));
+            // 현재 위치에서 1초 동안 오른쪽으로 768 만큼 이동.
+            CCActionInterval* actRight = CCMoveBy::create(1, ccp(768,0));
 
             CCLog("6. selectLayout : %p", selectLayout);
             selectLayout->runAction(actRight);
