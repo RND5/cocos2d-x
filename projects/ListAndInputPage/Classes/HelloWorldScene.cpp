@@ -37,7 +37,7 @@ bool HelloWorld::init()
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
 
-
+    CCLog("\n size x = %f, y = %f \n", visibleSize.width, visibleSize.height);
 
     ////////////////////////////////////////////////////////////////////////////////////
     /////
@@ -128,6 +128,21 @@ void HelloWorld::selectBtnAddDevice(CCObject* pSender, TouchEventType type)
     }
 }
 
+void HelloWorld::selectBtnDelDevice(CCObject* pSender, TouchEventType type)
+{
+    if(type == TOUCH_EVENT_BEGAN) {
+        CCScene* pScene = DeviceDeletePage::scene();
+
+        CCDirector* pDirector = CCDirector::sharedDirector();
+        //CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
+
+        //pDirector->setOpenGLView(pEGLView);
+        pDirector->replaceScene(pScene);
+    }
+}
+
+
+
 void HelloWorld::getUI()
 {
     uLayer = UILayer::create();
@@ -165,6 +180,8 @@ void HelloWorld::getUI()
     pBtn_delDevice->setScaleX(2);
     pBtn_delDevice->setScaleY(2);
 
+    pBtn_addDevice->addTouchEventListener(this, toucheventselector(HelloWorld::selectBtnAddDevice));        // attach event listener at add button
+    pBtn_delDevice->addTouchEventListener(this, toucheventselector(HelloWorld::selectBtnDelDevice));
 
     
 //    char strUTF8[ 1024 ];
@@ -173,8 +190,6 @@ void HelloWorld::getUI()
 
     //pBtn_addDevice->setTitleFontName("NanumGothic.ttf");
 
-
-    pBtn_addDevice->addTouchEventListener(this, toucheventselector(HelloWorld::selectBtnAddDevice));        // attach event listener at add button
 
     //pLayout_listFirstItem->addTouchEventListener(this, toucheventselector(HelloWorld::touchListviewItem));
     //pLabel_name->addTouchEventListener(this, toucheventselector(HelloWorld::touchListviewItem));
@@ -186,26 +201,47 @@ void HelloWorld::touchListviewItem(CCObject* pSender, TouchEventType type)
 {
 
     if(type == TOUCH_EVENT_BEGAN) {
+        // 만약 슬라이드 이동이 있었다면 제자리로 되돌림.
         if(isClicked == true) {
-            selectLayout->runAction(CCMoveBy::create(1, ccp(-768,0)));
+            selectLayout->runAction(CCMoveBy::create(0.5, ccp(-768,0)));
         }
-                
+        
+        // pSender 가 Layout 일수도 있고, Layout 안에 있는 label 일수도 있다.
+        int selectLayoutOrLabel = 0;
+
         selectLayout = dynamic_cast<Layout*>(pSender);
+        if(selectLayout == NULL) {
+            selectLabel = dynamic_cast<Label*>(pSender);
+            selectLayout = dynamic_cast<Layout*>(selectLabel->getParent());
+        }
+        
         CCLog("1. pSender : %p", pSender);
         CCLog("2. selectLayout : %p", selectLayout);
 
         if(selectLayout != NULL) { 
             // 현재 위치에서 1초 동안 오른쪽으로 768 만큼 이동.
-            CCActionInterval* actRight = CCMoveBy::create(1, ccp(768,0));
-
-            CCLog("6. selectLayout : %p", selectLayout);
+            CCActionInterval* actRight = CCMoveBy::create(0.5, ccp(768,0));
             selectLayout->runAction(actRight);
-            
+
             isClicked = true;
         }
         else {
             isClicked = false;
         }
+
+
+
+        // 종종 다이나믹 캐스팅에서 NULL 값이 반환 될 경우가 있음. 그래서 널 값일 경우 슬라이드 불가능하게 설정.
+        //if(selectLayout != NULL) { 
+        //    // 현재 위치에서 1초 동안 오른쪽으로 768 만큼 이동.
+        //    CCActionInterval* actRight = CCMoveBy::create(0.5, ccp(768,0));
+        //    selectLayout->runAction(actRight);
+        //    
+        //    isClicked = true;
+        //}
+        //else {
+        //    isClicked = false;
+        //}
 
         //Widget* newItem = pListview_devices->getItem(listview_count - 2);
         //Layout* secondItem = dynamic_cast<Layout*>(newItem->getChildByTag(16));
@@ -221,11 +257,8 @@ void HelloWorld::touchListviewItem(CCObject* pSender, TouchEventType type)
 void HelloWorld::touchBackButton(CCObject* pSender, TouchEventType type)
 {
     if(type == TOUCH_EVENT_BEGAN) {
-
-        //selectLayout = dynamic_cast<Button*>(pSender);
-
         // 현재 위치에서 1초 동안 왼쪽으로 480 만큼 이동.
-        CCActionInterval* actLeft = CCMoveBy::create(1, ccp(-480,0));
+        CCActionInterval* actLeft = CCMoveBy::create(0.5, ccp(-768,0));
         selectLayout->runAction(actLeft);
 
         isClicked = false;

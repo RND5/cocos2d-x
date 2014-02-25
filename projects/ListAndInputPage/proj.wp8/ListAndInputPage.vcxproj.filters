@@ -52,6 +52,9 @@
     <ClCompile Include="DeviceInfoIO.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="DeviceDeletePage.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListAndInputPage.h" />
@@ -71,6 +74,9 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="DeviceInfoIO.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceDeletePage.h">
       <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>

@@ -866,7 +866,7 @@
                     "resourceType": 0
                   },
                   "fontName": "微软雅黑",
-                  "fontSize": 16,
+                  "fontSize": 15,
                   "fontType": 0,
                   "normal": null,
                   "normalData": {
@@ -883,7 +883,7 @@
                   "scale9Enable": false,
                   "scale9Height": 50,
                   "scale9Width": 60,
-                  "text": "감시",
+                  "text": "WATCH",
                   "textColorB": 255,
                   "textColorG": 255,
                   "textColorR": 255
@@ -938,7 +938,7 @@
                     "resourceType": 0
                   },
                   "fontName": "微软雅黑",
-                  "fontSize": 16,
+                  "fontSize": 15,
                   "fontType": 0,
                   "normal": null,
                   "normalData": {
@@ -955,7 +955,7 @@
                   "scale9Enable": false,
                   "scale9Height": 50,
                   "scale9Width": 60,
-                  "text": "검색",
+                  "text": "SEARCH",
                   "textColorB": 255,
                   "textColorG": 255,
                   "textColorR": 255
@@ -1010,7 +1010,7 @@
                     "resourceType": 0
                   },
                   "fontName": "微软雅黑",
-                  "fontSize": 14,
+                  "fontSize": 15,
                   "fontType": 0,
                   "normal": null,
                   "normalData": {
@@ -1027,7 +1027,7 @@
                   "scale9Enable": false,
                   "scale9Height": 50,
                   "scale9Width": 60,
-                  "text": "설정 변경",
+                  "text": "CHANGE",
                   "textColorB": 255,
                   "textColorG": 255,
                   "textColorR": 255
@@ -1082,7 +1082,7 @@
                     "resourceType": 0
                   },
                   "fontName": "微软雅黑",
-                  "fontSize": 16,
+                  "fontSize": 15,
                   "fontType": 0,
                   "normal": null,
                   "normalData": {
@@ -1099,7 +1099,7 @@
                   "scale9Enable": false,
                   "scale9Height": 50,
                   "scale9Width": 60,
-                  "text": "이전",
+                  "text": "BACK",
                   "textColorB": 255,
                   "textColorG": 255,
                   "textColorR": 255

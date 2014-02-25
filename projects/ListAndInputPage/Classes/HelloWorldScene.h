@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "DeviceRegisterPage.h"
+#include "DeviceDeletePage.h"
 #include "DeviceInfoIO.h"
 
 #include "cocos2d.h"
@@ -21,26 +22,30 @@ public:
 
     Button* pBtn_setting;
 
-    ListView* pListview_devices;       // listview
+    // listview
+    ListView* pListview_devices;
 
+    // listview에 추가 될 아이템
     Layout* pLayout_listAddItem;
 
-    Layout* pLayout_listFirstItem;        // listview에 추가 될 아이템
+    // listview에 추가되는 아이템 중 첫 번째 레이아웃.
+    Layout* pLayout_listFirstItem;
     Label* pLabel_name;
     Label* pLabel_ip;
     Label* pLabel_num;
 
-    Layout* pLayout_listSelectedItem;       // listview에 있는 item이 선택되었을 때 불리어짐.
+    // listview에 추가되는 아이템 중 두 번째 레이아웃. listview에 있는 첫 번째 item이 선택되었을 때 불리어짐.
+    Layout* pLayout_listSelectedItem;
     //Button* pBtn_whatch;
     //Button* pBtn_search;
     //Button* pBtn_changeSet;
     //Button* pBtn_back;
     
+    // ADD, DEL 버튼
     Button* pBtn_addDevice;
     Button* pBtn_delDevice;
         
-    
-    //
+    // listview에 저장되는 아이템에 이벤트 붙임.
     Widget* newItem;
 
     Layout* firstLayout;
@@ -53,6 +58,7 @@ public:
     Button* back;
 
     Layout* selectLayout;
+    Label* selectLabel;
 
     // listview 에 있는 요소가 클릭된 상태인가를 나타내주는 멤버 변수
     bool isClicked;
@@ -63,6 +69,8 @@ public:
     int listview_count;
 
     void selectBtnAddDevice(CCObject* pSender, TouchEventType type);
+        
+    void selectBtnDelDevice(CCObject* pSender, TouchEventType type);
 
     void getUI();
 

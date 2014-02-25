@@ -209,6 +209,7 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="DeviceDeletePage.h" />
     <ClInclude Include="DeviceInfoIO.h" />
     <ClInclude Include="DeviceInformation.h" />
     <ClInclude Include="DeviceRegisterPage.h" />
@@ -217,6 +218,7 @@
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="DeviceDeletePage.cpp" />
     <ClCompile Include="DeviceInfoIO.cpp" />
     <ClCompile Include="DeviceInformation.cpp" />
     <ClCompile Include="DeviceRegisterPage.cpp" />
